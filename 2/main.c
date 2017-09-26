@@ -12,23 +12,23 @@
   exceed four million, find the sum of the even-valued terms.
 */
 
-unsigned int sumOfEvenFib(int first, int second, unsigned int *sum);
+unsigned int sumOfEvenFib(int first, int second, unsigned int sum);
 
 int main() {
   
   unsigned int sum = 0;
   printf("Original Solution: \n");
-  printf("sum: %u\n", sumOfEvenFib(1, 2, &sum));
+  printf("sum: %u\n", sumOfEvenFib(1, 2, sum));
   
   return 0;
 }
 
-unsigned int sumOfEvenFib(int first, int second, unsigned int *sum) {
+unsigned int sumOfEvenFib(int first, int second, unsigned int sum) {
   if (first > UPPER) {
-    return *sum;
+    return sum;
   }
   
-  (first & 1) == 0 ? (*sum) += first : 0;
+  (first & 1) == 0 ? (sum) += first : 0;
   
   sumOfEvenFib(second, first + second, sum);
 }
